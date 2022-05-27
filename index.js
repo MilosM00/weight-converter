@@ -18,15 +18,49 @@ let isChange = true;
 buttonChange.addEventListener(`click`, () =>{
 
     if(isChange === false){
+
+        inputKilogramsTwo.value = ``;
+        inputPoundsTwo.value = ``;
+
         overlayOne.classList.remove(`hidden-1`);
         overlayTwo.classList.add(`hidden-2`);
+
     }
 
     if(isChange === true){
+
+        inputKilograms.value = ``;
+        inputPounds.value = ``;
+
         overlayOne.classList.add(`hidden-1`);
         overlayTwo.classList.remove(`hidden-2`);
+
     }
 
     isChange = !isChange;
+
+});
+
+buttonConvert.addEventListener(`click`, () =>{
+
+    if(isChange === true){
+
+        if(inputKilograms.value > 0){
+            
+            inputPounds.value = inputKilograms.value * 2.2;
+
+        }
+
+    }
+
+    if(isChange === false){
+
+        if(inputPoundsTwo.value > 0){
+
+            inputKilogramsTwo.value = inputPoundsTwo.value * 0.45;
+
+        }
+
+    }
 
 });
